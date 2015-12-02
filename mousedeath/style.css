@@ -1,0 +1,66 @@
+html{
+	width:100%;
+}
+
+::selection {color:white;background:rgba(0,0,0,1);}
+
+body{
+	background-color: blue;
+	width:100%;
+	font-family: 'Source Code Pro', sans-serif;
+	color:white;
+}
+
+
+.container{
+	position:absolute;
+	width:800px;
+	height:600px;
+	top:0;left:0;bottom:0;right:0;
+	margin:auto;
+}
+.buttonContainer{
+	width:800px;
+	padding-left:4%;
+}
+
+
+.textField{
+	width:775px;
+	height:100px;
+	margin-bottom:100px;
+	border: white 3px solid;
+	text-align:center;
+}
+
+.textField:hover{
+	border:black 3px solid;
+}
+
+.textField h1{
+	display:inline;
+	font-size:96px;
+	padding:15px;
+}
+
+.menuButton{
+	width:200px;
+	height:50px;
+	text-align:center;
+	border: white 3px solid;
+	float:left;
+	margin:15px;
+}
+
+.menuButton:hover{border: black 3px solid;}
+
+
+.menuButton p{
+	color:white;
+	padding-top:15px;
+	font-size:18px;
+	font-weight:400;
+	letter-spacing:0.25em;
+}
+
+

@@ -1,0 +1,72 @@
+<html>
+<head>
+	<link rel="stylesheet" href="style.css">
+	<link href='http://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:700,600, 400,300' rel='stylesheet' type='text/css'>
+
+	<title>tutorial / {{ page.topic }}</title>
+
+</head>
+
+	{% include nav.html %}
+
+	<section class="title">
+
+		{{ page.topic }}
+
+	</section>
+
+	<section class="about">
+		
+		{{ page.about }}
+
+	</section>
+
+	<section class="hero">
+
+		{{ page.hero }}
+
+	</section>
+
+	<section class="get-started">
+		<h2>How do I get started?</h2>
+
+		<ol>
+		
+			{{ page.steps }}
+
+			<!-- need to be written in <li> tags -->
+
+		</ol>
+	</section>
+
+
+	{% if page.related %}
+
+	<section class="related">
+		<h2>see {{ page.related }} <span>&#10162;</span></h2>
+	</section>
+
+	{% end if %}
+
+	{% if page.adref %}
+
+	<section id="ad-ref">
+		<h2>Additional References</h2>
+
+		<ul>
+			{{ page.adref }}
+
+			<!-- need to be written in <li> tags -->
+		</ul>
+	</section>
+
+	{% end if %}
+
+
+</body>
+</html>
+
+
+
+

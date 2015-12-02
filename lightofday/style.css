@@ -1,0 +1,82 @@
+html{
+  height:100%;
+}
+
+body{
+  height:100%;
+}
+
+.Layer{
+  position:absolute;
+  top:0; left:0;
+  width:100%; height:100%; 
+
+  -moz-animation-duration:60s;
+  -webkit-animation-duration:60s;
+
+/*  -moz-animation-name:time5;
+  -webkit-animation-name:time5;*/
+
+  -moz-animation-iteration-count:infinite;
+  -webkit-animation-iteration-count:infinite;
+
+  -moz-animation-direction: alternate;
+  -webkit-animation-direction: alternate;
+}
+
+@-webkit-keyframes time0{
+  0%{ background-color:#A8B7C6;} 
+  25%{ background-color: #9EB6CE;}
+  50%{ background-color: #CDD6EE;}
+  100%{background-color:#C5D6FD;}
+}
+
+@-webkit-keyframes time1{
+  0%{ background-color:#9AE5FF;} 
+  25%{ background-color: #B8E9FA;}
+  50%{ background-color: #B8F8FA;}
+  100%{background-color:#B8FAF4;}
+}
+
+@-webkit-keyframes time2{
+  0%{ background-color:#6BDCFF;} 
+  25%{ background-color: #1BB1FC;}
+  50%{ background-color: #078BF0;}
+  100%{background-color:#70C1FF;}
+} 
+
+@-webkit-keyframes time3{
+  0%{ background-color:#6991FD;} 
+  25%{ background-color: #809DEE;}
+  50%{ background-color: #8087EE;}
+  100%{background-color:#7D82FF;}
+} 
+
+@-webkit-keyframes time4{
+  0%{ background-color:#606FF3;} 
+  25%{ background-color: #6571E1;}
+  50%{ background-color: #5575DE;}
+  100%{background-color:#5467DF;}
+} 
+
+@-webkit-keyframes time5{
+  0%{ background-color:#533FB9;} 
+  25%{ background-color: #4B39A8;}
+  50%{ background-color: #393DA8;}
+  100%{background-color:#31349F;}
+} 
+
+@-webkit-keyframes time6{
+  0%{ background-color:#2C1F50;} 
+  25%{ background-color: #2D2349;}
+  50%{ background-color: #1F1D44;}
+  100%{background-color:#18173C;}
+} 
+
+@-webkit-keyframes time7{
+  0%{ background-color:#0C092B;} 
+  25%{ background-color: #0E0B29;}
+  50%{ background-color: #0E0A32;}
+  100%{background-color:#0A1232;}
+} 
+

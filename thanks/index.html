@@ -1,0 +1,112 @@
+<html>
+
+<head>
+	<title>Thanks, John</title>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+	<script type="text/javascript">
+
+		// How fast should the video play as the user scrolls?
+		var SCROLL_SCRUB_SPEED = 500; // pixels/sec
+
+		var video;
+
+	
+		$(document).ready(function() {
+
+			
+
+			function updateVideo() {
+	        var video = $('#video-bg').get(0);
+	        var videoLength = video.duration;
+	        var scrollPosition = $(document).scrollTop();
+	        video.currentTime = (scrollPosition / SCROLL_SCRUB_SPEED) % videoLength;
+
+	        // (scrollPosition / ($(document).height() - $(window).height())) * videoLength;
+			}
+
+			$(window).scroll(function(e) {
+			        updateVideo();
+			    });
+
+			if (($(document).scrollTop()) > 3000) {
+				$("#scroll").hide("slow");
+			} 
+
+
+
+
+		});
+		
+	</script>
+
+	<style type="text/css">
+
+	* {
+		margin: 0;
+		padding: 0;
+	}
+
+		body {
+			height: 132000px;
+		}
+
+		#video-bg {
+			position:fixed;
+			width:auto;
+			margin-top: 0%;
+			min-width: 100%;
+			height: auto;
+			min-height: 100%;
+
+		}
+
+		#video-bg-wrapper {
+			position:fixed;
+			height: 100%;
+		}
+
+		#video-bg-holder {
+			position:fixed;
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+			z-index: 2;
+		}
+
+		#scroll {
+			position: fixed;
+			top: 10%;
+			right: 5%;
+			font-family: times, serif;
+			font-weight: bold;
+			color: white;
+			font-size: 40px;
+			letter-spacing: 2px;			
+			width: 250px;
+			text-align: center;
+			z-index: 10;
+		}
+
+	</style>
+
+</head>
+
+<body>
+	<div id="scroll">
+		&darr;
+	</div>
+
+	<div id="video-bg-holder">
+		<div id="video-bg-wrapper">
+			<video id="video-bg" preload="auto">
+				<source src="thanks.webm" type="video/webm">
+				<p>Your browser does not support the <code>video</code> element.
+			</video>
+		</div>
+	</div>
+
+</body>
+
+</html>

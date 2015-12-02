@@ -1,0 +1,152 @@
+<html>
+<head>
+	<title>modern times</title> 
+
+<style>
+	*{ 
+		margin:0px;
+		padding:0px;
+	}
+
+	img {
+		float:left;
+		width:33.333%;
+		height:auto;
+	}
+
+
+
+	body {
+	
+
+		height:100%;
+		overflow:hidden;
+
+	}
+
+	div#container {
+		
+		background-size:100% 100%;
+		position:relative;
+		top:-10%;
+
+	}
+
+	div#text {
+		display:none;
+		position:absolute;
+		top:300px;
+		left:33.33%;
+		width:33.33%;
+		text-align:center;
+		z-index: 100;
+		font-size:300%;
+		/* font-weight:bold; */
+		font-family:'Cooper Black', Helvetica;
+		color: rgba(255,200,200,.8);
+
+	}
+	
+</style>
+
+
+		<script type="text/javascript">
+
+			window.onload = outer;
+			//window.onload = music();
+
+
+			//create array of ids for each outer image
+			var outerImg = new Array (
+						"one",
+						"two",
+						"three",
+						"four",
+						"five",
+						"six",
+						"seven",
+						"eight",
+						"nine",
+						"ten",
+						"eleven",
+						"middleImg");
+			
+			//chooses one an image from a file display
+			function outer() {
+				//create array of images in file 'outr'
+				var outr = new Array(
+			    			"outr/1.gif",
+						   	"outr/2.gif",
+						   	"inr/one.gif",
+						   	"inr/three.gif",
+						   	"inr/four.gif");
+				var randNum = Math.floor(Math.random() * outr.length);
+
+				//create array of images in file "inr"
+				var inner = new Array(
+							"inr/one.gif", 
+						   	"inr/two.gif",
+						   	"inr/three.gif",
+						   	"inr/four.gif",
+						   	"inr/five.gif",
+						   	"outr/1.gif",
+						   	"outr/2.gif");
+			    var randomNum = Math.floor(Math.random() * inner.length);
+
+				//iterate through outerImg and replace each src with a random url
+				for (var i=0; i<outerImg.length;i++) {
+					if (outerImg[i]=="middleImg") {
+						document.getElementById(outerImg[i]).src=inner[randomNum];
+					} else {
+					document.getElementById(outerImg[i]).src=outr[randNum];
+					}
+				}
+
+				var songs = new Array (
+						"songs/sos.mp3",
+						"songs/bonethugs.mp3",
+						"songs/deathgrips.mp3",
+						"songs/daftpunk.mp3",
+						"songs/beatconnection.mp3",
+						"songs/blawan.mp3");
+				var rando = Math.floor(Math.random() * songs.length);
+				song = document.getElementById("music");
+				song.src=songs[rando];
+				song.preload="auto";
+				song.loop=true;
+
+
+				document.onkeydown = function() {
+					document.location.reload(true);
+				}
+
+				} //end function outer()
+
+
+
+
+		</script>
+
+
+</head>
+
+<body>
+	<audio id="music" src="#" autoplay="autoplay">
+	</audio>
+	<div id="container">
+
+	<p><img id="one" src="#"><img id="two" src="#"><img id="three" src="#"></p>
+	<p><img id="four" src="#"><img id="middleImg" src="#"><img id="five" src="#"></p>
+	<p><img id="six" src="#"><img id="seven" src="#"><img id="eight" src="#"></p>
+	<p><img id="nine" src="#"><img id="ten" src="#"><img id="eleven" src="#"></p>
+	<!-- <p><img id="one" src="#"><img id="one" src="#"><img id="one" src="#"></p>
+	<p><img id="one" src="#"><img id="one" src="#"><img id="one" src="#"></p>
+	<p><img id="one" src="#"><img id="one" src="#"><img id="one" src="#"></p>
+	<p><img id="one" src="#"><img id="one" src="#"><img id="one" src="#"></p>
+	<p><img id="one" src="#"><img id="one" src="#"><img id="one" src="#"></p>
+	<p><img id="one" src="#"><img id="one" src="#"><img id="one" src="#"></p> -->
+	<div id="text">no one's gonna love you the way i do</div>
+</div>
+</body>
+
+</html>

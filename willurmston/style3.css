@@ -1,0 +1,88 @@
+		
+		body {
+			width: 100%;
+			height: 100%;
+			overflow: scroll;
+			margin: 0px;
+			background-image: url('img/ui/grid.png');
+			background: rgba(0,0,255,1);
+		}
+
+
+
+		h1 {
+			font-family: "Lucida Console";
+			font-size: 10pt;
+			line-height: 20pt;
+			padding: 5px;
+		}
+
+
+		p2 {
+			font-family: "Lucida Console";
+			font-size: 10pt;
+			line-height: 20px;
+		}
+
+		b {
+			font-weight: 800;
+		}
+
+		a {
+			text-decoration: none;
+			color: rgba(0,0,255,1);
+		}
+
+		a:hover {
+			text-decoration: underline;
+			cursor: pointer;
+		}
+
+		img {
+			margin: 20px;
+			float: left;
+			border: solid black 1px;
+			-webkit-transition: all 500ms;
+
+		}
+
+		img:hover {
+			cursor: -webkit-zoom-in; 
+			cursor: -moz-zoom-in;
+		}
+
+			.clicked {
+				width: 30%;
+				box-shadow: 15px 15px 0px rgba(0,0,0,.6);
+				-webkit-transition: all 500ms;
+			}
+
+			.clicked:hover {
+				cursor: -webkit-zoom-out; 
+				cursor: -moz-zoom-out;
+			}
+
+		.nav {
+			height: 430px;
+			width: 220px;
+			position: fixed;
+				top: 300px;
+				bottom: 0;
+				left: 30px;
+			padding-left: 10px;
+			padding-right: 15px;
+			margin: auto;
+			background: white;
+			box-shadow: 25px 25px 0px rgba(0,0,0,.6);
+			border: solid black 2px;
+			z-index: 100;
+		}
+
+		.content {
+			width: 75%;
+			height: 10000px;
+			padding-left:25%;
+		}
+
+
+

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Welcome!</title>
+	<link href='http://fonts.googleapis.com/css?family=Karla:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+
+	<script type="text/javascript">
+	$(document).ready(function(){
+
+		function verifyButton(){
+			$('.container,.containerSecondary').toggle();
+			questionGen()
+
+		}
+
+		function questionGen(){
+		var questions = new Array(); 
+		questions[0] = "What is the most beautiful object?"; 
+		questions[1] = "What is best in life?"; 
+		questions[2] = "What is love?"; 
+		questions[3] = "Where are we going?"; 
+		questions[4] = "What is the greatest pleasure in life?"; 
+		questions[5] = "How do we know the truth?";
+
+		var randomNumber = Math.floor(Math.random()*(questions.length)); 
+		var randomQuestion = questions[randomNumber]; 
+
+		$('.question').empty(); 
+		$('.question').append("<h1>"+randomQuestion+"</h1>");
+		}
+
+		$('.verifyClick').click(function(){
+			if (!$('.verifyField').val()){
+
+			console.log("empty");
+
+			} else {
+			verifyButton();
+			questionGen();
+
+			}
+		})
+
+		$('#verifyForm').submit(function(){
+			if (!$('.verifyField').val()){
+
+			console.log("empty");
+
+			} else {
+			verifyButton();
+			questionGen();
+
+			}
+	
+		})
+		
+		questionGen();
+
+	})
+
+
+	</script>
+</head>
+<body>
+
+	<div class="container">
+		<p class="Instructions">Before you proceed, please verify that you are human: </p>
+	<form id="verifyForm">
+		<span class="question"></span>
+		<br><br>
+		<input type="text" class="verifyField" style="width:350px;margin-bottom:25px">
+	</form>
+	<button class="verifyClick" >Verify</button>
+	</div>
+
+
+	<div class="containerSecondary">
+		<p>Please try again.</p>
+	<button class="verifyClick">Try again</button>
+	</div>
+
+</body>
+</html> 

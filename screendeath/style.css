@@ -1,0 +1,85 @@
+html{
+	width:100%;
+}
+
+body{
+/*	background-color: blue;
+*/	width:100%;
+	font-family: 'Source Code Pro', sans-serif;
+	color:white;
+}
+
+body a{
+	color:white;
+	text-decoration:none;
+}
+
+.menuButton{
+	width:200px;
+	height:50px;
+	text-align:center;
+	border: white 3px solid;
+}
+
+.menuButton:hover{
+	border:white 3px solid;color:black;
+}
+
+.menuButton p{
+	padding-top:15px;
+	font-size:18px;
+	font-weight:400;
+	letter-spacing:0.1em;
+}
+
+
+.contentContainer{
+	text-align: center;
+
+	color:white;
+	width:40%;
+	margin:auto;
+	margin-bottom:200px;
+}
+
+.contentContainer h1{
+	font-size:72px;
+	font-weight:800;
+	padding:350px 100px 350px 100px;
+	letter-spacing: 0.75em;
+}
+
+.contentContainer p{
+	font-weight: 300;
+	margin-bottom:15px;
+	font-size: 12px;
+	letter-spacing:0.1em;
+	line-height:1.5em;
+}
+
+#rightButton{
+	position:fixed;
+	right:25px;
+	top:25px;
+}
+
+#lowerRightButton{
+	position:fixed;
+	right:25px;
+	bottom:25px;
+
+}
+
+#leftButton{
+	position:fixed;
+	left:25px;
+	top:25px;
+}
+
+#lowerLeftButton{
+	position:fixed;
+	left:25px;
+	bottom:25px;
+
+}
+

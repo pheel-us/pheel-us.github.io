@@ -1,0 +1,294 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link rel="stylesheet" href="happy.css">
+		<title>Happy Journey</title>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script>
+			$(document).ready(function() {
+				$("#intro").css("opacity", "0");
+				$("#navigation").hide();
+				$("#lines").hide();
+				$("nav").hide();
+
+				$(document).scroll(function() {
+					var scrollTop = $(document).scrollTop();
+					var op = Math.abs((scrollTop * .004));
+					var project = $("#about").offset().top;
+
+					if (scrollTop >= 0) {
+						$("#intro").css("opacity", op);
+					}
+
+					if (scrollTop > project) {
+				  		$("#lines").fadeIn("slow");
+				  	} else {
+				  		$("nav").fadeOut("slow");
+				  	} 
+
+				}); 
+
+				$("#lines").click(function() {
+    				$("#navigation").toggle("slow");
+				}); 
+
+				$("#hist").click(function() {
+    				$('html, body').animate({
+      				scrollTop: $("#history").offset().top
+    				}, 800);
+				}); 
+
+				$("#pro").click(function() {
+    				$('html, body').animate({
+      				scrollTop: $("#project").offset().top
+    				}, 800);
+				}); 
+
+				/* $("#more").click(function() {
+					$("#more").fadeOut("slow", function(){
+						$(".long").fadeIn("slow");
+						$("#less").fadeIn("slow");
+					});
+				});
+				$("#less").click(function() {
+					$("#less").fadeOut("slow", function(){
+						$(".long").fadeOut("slow");
+						$("#more").fadeIn("slow");
+					});
+				}); */
+
+				/* $("#lines").hover(
+					function(){
+						$(this).hide("fast", function(){
+							$("#navigation").show();
+						});
+					},
+					function() {
+						$("#navigation").hide("fast", function(){
+							$(this).show();
+						});
+					}); */
+
+			});
+		</script>
+	</head>
+	<body>
+
+		
+		<nav id="lines">
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+		</nav> 
+
+		<nav id="navigation">
+			<a href="#history" id="hist">History</a></br>
+			<a href="#project" id="pro">Project</a></br>
+			<a href="#parallel" id="para">Parallel</a></br>
+			<a href="#limits" id="lim">Limits</a></br>
+		</nav>
+	
+
+		<section class="sienna">
+			<article id="intro">
+				<img src="logo3.png">
+				<h1>शुभ यात्रा</h1>
+				<h3>HAPPY JOURNEY</h3>
+			</article>
+		</section>
+
+		<section class="indianred">
+				<blockquote>
+					“Gibreel, captive aboard AI-420, sank into forgivable rhapsodies, fixing Chamcha with his glittering eye, explicating the mysteries of the runners’ coding system, black swastika red circle yellow slash dot, running in his mind’s eye the entire relay from home to office desk, that improbable system by which two thousand dabbawallas delivered, each day, over one hundred thousand lunch-pails, and on a bad day, Spoono, maybe fifteen got mislaid, we were illiterate, mostly, but the signs were our secret tongue” (Rushdie 18).
+				</blockquote>
+		</section>
+
+		<section class="cornsilk">
+			<article id="about">
+				<blockquote class="center">This project examines station signage in the Mumbai Suburban Railway.</blockquote>
+			</article>
+
+			<article id="history">
+				<h2>History <span class="hindi">इतिहास</span></h2>
+				<p class="center">Below are examples of current railway signage in Mumbai.</p>
+				<article class="three-up">
+					<!-- <figure>
+						<img src="http://know.burrp.com/wp-content/uploads/2011/06/central-railway-fast-local-8-am-in-morning.jpg">
+						<figcaption>Female commuters crowd into a ladies only car during rush hour. <a href="http://know.burrp.com/wp-content/uploads/2011/06/central-railway-fast-local-8-am-in-morning.jpg">image source</a></figcaption>
+					</figure> -->
+					<figure>
+						<img src="http://2.bp.blogspot.com/-_w92t6Z4YaE/UHGn4oPr5uI/AAAAAAAAAzQ/FsvRrbFBPYQ/s1600/mumbai+2.jpg">
+						<figcaption>"Bandra Terminus" <a href="http://2.bp.blogspot.com/-_w92t6Z4YaE/UHGn4oPr5uI/AAAAAAAAAzQ/FsvRrbFBPYQ/s1600/mumbai+2.jpg">image source</a></figcaption>
+					</figure>
+					<figure>
+						<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Matunga_Road.jpg/300px-Matunga_Road.jpg">
+						<figcaption>Matunga Road <a href="http://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Matunga_Road.jpg/300px-Matunga_Road.jpg">image source</a></figcaption>
+					</figure>
+					<figure>
+						<img src="http://cdn.images.guides.data.mobilytrip.com/wp_images/wall/06d6e1c410fa63513c07ab94cea67cfa31b9987f_Bhandup_station_plate.jpg">
+						<figcaption>Bhandup <a href="http://cdn.images.guides.data.mobilytrip.com/wp_images/wall/06d6e1c410fa63513c07ab94cea67cfa31b9987f_Bhandup_station_plate.jpg">image source</a></figcaption>
+					</figure>
+					<figure>
+						<img src="http://cdn.images.guides.data.mobilytrip.com/wp_images/wall/bd3c3d19ccaa1a2327d8d26545e3be9b80fbf249_Borivali_platformboard.jpg">
+						<figcaption>Borivali <a href="http://cdn.images.guides.data.mobilytrip.com/wp_images/wall/bd3c3d19ccaa1a2327d8d26545e3be9b80fbf249_Borivali_platformboard.jpg">image source</a></figcaption>
+					</figure>
+					<figure>
+						<img src="http://cdn.images.guides.data.mobilytrip.com/wp_images/wall/8fef8ad0fe0894b68dd30522c9f5247d54287f58_Mulund_Station_(2).jpg">
+						<figcaption>Mulund <a href="http://cdn.images.guides.data.mobilytrip.com/wp_images/wall/8fef8ad0fe0894b68dd30522c9f5247d54287f58_Mulund_Station_(2).jpg">image source</a></figcaption>
+					</figure>
+					<figure>
+						<img src="http://upload.wikimedia.org/wikipedia/commons/5/50/Dadar_Station_1.jpg">
+						<figcaption>Dadar <a href="http://upload.wikimedia.org/wikipedia/commons/5/50/Dadar_Station_1.jpg">image source</a></figcaption>
+					</figure>
+					<figure>
+						<img src="http://explorediscoverblog.files.wordpress.com/2013/04/ladies-station.jpg">
+						<figcaption>Sandhurst Road <a href="http://explorediscoverblog.files.wordpress.com/2013/04/ladies-station.jpg">image source</a></figcaption>
+					</figure>
+					<figure>
+						<img src="http://im.rediff.com/news/2012/jan/11dombivli2.jpg">
+						<figcaption>Domrivli <a href="http://im.rediff.com/news/2012/jan/11dombivli2.jpg">image source</a></figcaption>
+					</figure>
+					<figure>
+						<img src="http://cdn.images.guides.data.mobilytrip.com/wp_images/wall/d32adf490be5b83c0fcd15097e7cb2dd4aa60aeb_Thane_station_(2).jpg">
+						<figcaption>Thane <a href="http://cdn.images.guides.data.mobilytrip.com/wp_images/wall/d32adf490be5b83c0fcd15097e7cb2dd4aa60aeb_Thane_station_(2).jpg">image source</a></figcaption>
+					</figure>
+				</article>
+
+				<p>The Mumbai Suburban Railway's current signage system closely mimics the London Underground’s red circle and blue crossbar, with the name of the station written in the crossbar. The signage is still largely hand-painted, and features the name of the station in the Devanagari script, and often in English as well (though not reliably).</p>
+				
+				<p>Mumbai is home to myriad forms of signage, both hand-painted and digitally conceived,  as documented by the <a href="http://typocity.com">TyPoCiTy project</a>.</p>
+
+				<p>Signage in India is rarely standardized and is still often hand-painted, perhaps because cross-compatible digital typography for Indian scripts is a recent phenomenon.</p>
+
+				<p>Too, some designers feel that signage in general is ineffective in India. People would rather talk to a person than trust a sign.</p>
+
+					<figure>
+						<img src="http://upload.wikimedia.org/wikipedia/commons/9/9e/Train_travellers_at_Churchgate_Station.jpg">
+						<figcaption><a href="http://upload.wikimedia.org/wikipedia/commons/9/9e/Train_travellers_at_Churchgate_Station.jpg">image source</a></figcaption>
+					</figure>
+
+				<p>The Mumbai Suburban Railway was a British colonial endeavor begun in 1853. Despite huge expansion in the past two decades, the railway still suffers from overcrowding, so much so that in 2008 a record 17 people died per day due to train fatalities. It’s not uncommon to see passengers ride on the roof or hang on to the side of the car.</p>
+		
+					<figure>
+						<img src="http://s1.reutersmedia.net/resources/r/?m=02&d=20130823&t=2&i=772364029&w=460&fh=&fw=&ll=&pl=&r=CDEE97M0EXX00">
+						<figcaption><a href="http://s1.reutersmedia.net/resources/r/?m=02&d=20130823&t=2&i=772364029&w=460&fh=&fw=&ll=&pl=&r=CDEE97M0EXX00">image source</a></figcaption>
+					</figure>
+
+				<p>The train has two classes: first and second, in addition to ladies first and second. Ladies, ladies first, and first class are designated with painted stripes outside the car.</p>
+
+					<figure>
+						<img src="http://2.bp.blogspot.com/-zU49TwWHWZg/TcSZ6XLsUjI/AAAAAAAADH4/2usHL4MOJiA/s1600/SueReno_Bombay1.jpg" class="">
+						<figcaption><a href="http://suereno.blogspot.com/2011/05/vintage-india-bombay-mumbai.html">image source</a></figcaption>
+					</figure>
+
+				<p>Dabbawalas, a quintessential Mumbai phenomenon, are people who deliver homemade lunches to the business people of Mumbai.</p>
+				<p>In the morning, a dabbawala will pick up a packed lunch cooked by the spouse of the business person, and deliver it to the office in time for lunch. After lunch is finished, the dabbawala will return the lunch box, or tiffin, to the house it came from.</p>
+				<p>Tiffins are delivered on foot, by train, or by bicycle. To deliver these tiffins, the city’s dabbawalas organize themselves for maximum efficiency.</p>
+				<p>Dabbawalas have been the subject of Western business analysis, and in particular received a Forbes Six Sigma award in 1998.</p>
+
+			</article>
+
+		<section class="indianred">
+			<article id="project">
+				<h2>Project <span id="hindi">परियोजना</span></h2>
+
+					<figure class="narrow">
+						<img src="http://www.typocity.com/streetweb/mewad1.jpg">
+						<figcaption><a href="http://www.typocity.com/streetweb/mewad1.jpg">image source</a></figcaption>
+					</figure>
+
+				<p>TyPoCiTy is a project that documents and examines rare and interesting instances of typography in public spaces of Bombay from the point of view of graphic design and social significance.</p>
+
+
+					<figure>
+						<img src="http://anshumanharsh.files.wordpress.com/2008/07/610x.jpg">
+						<figcaption><a href="http://anshumanharsh.files.wordpress.com/2008/07/610x.jpg">image source</a></figcaption>
+					</figure>
+
+				<p>Embedded in the project is a section that proposes a signage system for Mumbai train stations based on iconography used by dhaba-wallas.</p> 
+				<p>As graphic designers, this project is compelling because it calls into question the role of signage in a city like Mumbai, which, to generalize, depends largely on oral as opposed to written communication.</p>
+
+				<p class="center">Below is the dabbawala encoding system as disseminated by TyPoCiTy:</p>
+
+					<figure class="narrow">
+						<img src="http://www.typocity.com/dabbaweb/decode.jpg" class="color">
+						<figcaption><a href="http://www.typocity.com/dabbaweb/decode.jpg">image source</a></figcaption>
+					</figure>
+
+					<figure class="narrow">
+						<img src="http://www.typocity.com/dabbaweb/codes.jpg" class="color small">
+						<figcaption>"Bandra Terminus" <a href="http://www.typocity.com/dabbaweb/codes.jpg">image source</a></figcaption>
+					</figure>
+
+					<article class="three-up" style="min-height:400px;padding-bottom: 100px;">
+						<figure class="narrow">
+							<img src="http://www.typocity.com/dabbaweb/grantrd2.jpg" class="color">
+							<figcaption><a href="http://www.typocity.com/dabbaweb/grantrd2.jpg">image source</a></figcaption>
+						</figure>
+						<figure class="narrow">
+							<img src="http://www.typocity.com/dabbaweb/marine.jpg" class="color">
+							<figcaption><a href="http://www.typocity.com/dabbaweb/marine.jpg">image source</a></figcaption>
+						</figure>
+						<figure class="narrow">
+							<img src="http://www.typocity.com/dabbaweb/marine.jpg" class="color">
+							<figcaption><a href="http://www.typocity.com/dabbaweb/marine.jpg">image source</a></figcaption>
+						</figure>
+					</article>
+
+			</article>
+		</section>
+
+		<section class="sienna">
+			<article id="parallel">
+				<h2>Parallel Strategies <span class="hindi">समानांतर रणनीति</span></h2>
+
+				<blockquote style="padding: 0; padding-bottom: 40px">“The artists put forward a proposal to incorporate this iconographic language into the public signage system in Mumbai. Such a system would give each area its own distinctive symbol that would designate its local train station, bus stops and street signs. It is hoped that this signage system would be more intuitively interpreted in a multicultural and multilingual city in which textual markings in the standard three main languages can still be limiting.”</blockquote>
+
+				<p>The project believes that the cultural history of Mumbai can be seen through its visual (typographic) landscape.</p>
+
+				<p>It offers four points to justify the proposal:</br>
+					<ol>
+						<li>Symbol as constant identity.</li>
+						<li>Symbol as universal mark.</li>
+						<li>Symbol as signage.</li>
+						<li>Use of an existing system.</li>
+					</ol>
+				</p>
+
+				<p>The proposal aims to rebuild two identities: 1. The city of Mumbai, and 2. Mumbai's railway system.</p>
+
+				<p>Like others addressing the topic, Typocity references Forbes, Ripley’s Believe It or Not!, and the Guinness Book of World Records. The precision of this system, which all of these sources commend, seems to be its most notable characteristic.</p>
+				<p><em>Why does every article need to establish this before delving into the narrative or specifics of the system?</em></p>
+				<p><em>How does one measure the efficiency of the existing dabbawala system?</em></p>
+
+			</article>
+		</section>
+
+		<section class="cornsilk">
+			<article id="limits">
+				<h2>Limits <span class="hindi">सीमाएं</span></h2>
+
+				<p>Does a discourse need scholarly examination for validity?</p>
+
+				<p>We also found the form of presentation (web-based) to be a limit of the project. How does the presentation of a project affect how a person critically engages with its ideas and positions?</p>
+
+				<p>Can this presentation be structured in such a way that it allows the viewer to understand the project at a deeper level?</p> 
+
+				<p>In the decade since the website’s inception, web technologies have improved drastically. We see an opportunity to create a more organized and immersive experience. Too, we wonder about how accessible the project is to designers outside of India. We wonder if there might a way to publicize the project to Western graphic designers which will allow them to interact with the project on a critical level.</p>
+			</article>
+		</section>
+		<section class="indianred">
+			<article>
+				
+				<p class="center">This website was created by Keela Potter and Catherine Schmidt for Ijlal Muzzafar's "Positions and Practice" course in the fall of 2013.</p>
+
+				<h2>Thank You <span class="hindi">धन्यवाद</span></h2>
+
+				<figure>
+					<img src="ticket.JPG" class="color">
+				</figure>
+			</article>
+		</section>
+
+	</body>
+</html>

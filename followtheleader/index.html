@@ -1,0 +1,187 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 5.00//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+
+<head>
+
+    <title>follow the leader</title>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+
+    <style>
+
+		body {
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+			background-image: url('img/grid.png');
+		}    
+
+      .container {
+        width: 1000px;
+        height: 600px;
+        position: absolute;
+        	left: 0px;
+          	top: 0;
+          	bottom: 0;
+        margin-top: auto;
+        margin-bottom: auto;
+        padding: 50px;
+      }
+
+      	.hoverzone {
+      	width: 100px;
+        height: 600px;
+        position: absolute;
+        	left: 0px;
+          	top: 0;
+          	bottom: 0;
+        margin-top: auto;
+        margin-bottom: auto;
+        padding: 50px;
+        z-index: 50;
+      	}
+
+	      .hoverzone:hover{
+	      	width: 1000px;
+	      	cursor:pointer;
+	      }
+
+      .image {
+      	height: 100px;
+      	float: none;
+      }
+
+      .information {
+      	height: 700px;
+      	width: 0px;
+      	position: absolute;
+      	z-index: 1;
+      	-webkit-transition: all 300ms;
+      	transition: all 300ms;
+      }
+
+      .cascades {
+      	height: 700px;
+      	width: 0px;
+      	position: absolute;
+      		top: 100px;
+      	z-index: 2;
+      	-webkit-transition: all 300ms;
+      	transition: all 300ms;
+      }
+
+      .arrows {
+      	height: 700px;
+      	width: 0px;
+      	position: absolute;
+      		left:-20px;
+      	background: none;
+      	z-index: 3;
+      	-webkit-transition: all 300ms;
+      	transition: all 300ms;
+      }
+
+      .arrowstwo {
+      	height: 700px;
+      	width: 0px;
+      	position: absolute;
+      		left:-20px;
+      		top:100px;
+      	background: none;
+      	z-index: 3;
+      	-webkit-transition: all 300ms;
+      	transition: all 300ms;
+      }
+
+      .texthover {
+      	width: 1000px;
+      }
+
+      .arrowshover{
+      	width: 1000px;
+      		left: 80px;
+      	-webkit-transition: all 300ms;
+      	transition: all 300ms;
+      }
+
+     	.wiki{
+     		width: 100%;
+     		height: 100%;
+     		margin: 0;
+     		overflow: hidden;
+     		opacity: 0;
+     		-webkit-transition: all 1s;
+     		transition: all 1s;
+     	}
+
+     	.visible{
+     		opacity: 0.1;
+     		-webkit-transition: all 4s;
+     		transition: all 5s;
+     	}
+
+    </style>
+
+</head>
+
+<body>
+
+	<div class="wiki"><iframe src="http://en.wikipedia.org/wiki/Information_cascade" width="100%" height="100%" seamless frameborder="0">
+    </iframe></div>
+
+    <div class="hoverzone" onclick="window.location.href='http://en.wikipedia.org/wiki/information_cascade'"></div>
+
+ 	<div class="container">
+ 		<div class="information">
+	 		<div class="image" style="margin-left:10%;"><img src="img/in.png" width="100px" height="100px"></div>
+	 		<div class="image" style="margin-left:20%;"><img src="img/fo.png" width="100px" height="100px"></div>
+	 		<div class="image" style="margin-left:30%;"><img src="img/rm.png" width="100px" height="100px"></div>
+	 		<div class="image" style="margin-left:40%;"><img src="img/at.png" width="100px" height="100px"></div>
+	 		<div class="image" style="margin-left:50%;"><img src="img/io.png" width="100px" height="100px"></div>
+	 		<div class="image" style="margin-left:60%;"><img src="img/n.png" width="100px" height="100px"></div>
+	 	</div>
+
+	 	<div class="cascades">
+	 		<div class="image" style="margin-left:60%;"><img src="img/ca.png" width="100px" height="100px"></div>
+	 		<div class="image" style="margin-left:70%;"><img src="img/sc.png" width="100px" height="100px"></div>
+	 		<div class="image" style="margin-left:80%;"><img src="img/pic.png" width="100px" height="100px"></div>
+	 		<div class="image" style="margin-left:90%;"><img src="img/es.png" width="100px" height="100px"></div>
+	 	</div>
+
+	 	<div class="arrows">
+	 		<div class="image" style="margin-left:0%;"><img src="img/arrow.png" width="100px" height="100px"></div>
+	 		<div class="image" style="margin-left:10%;"><img src="img/arrow.png" width="100px" height="100px"></div>
+	 		<div class="image" style="margin-left:20%;"><img src="img/arrow.png" width="100px" height="100px"></div>
+	 		<div class="image" style="margin-left:30%;"><img src="img/arrow.png" width="100px" height="100px"></div>
+	 		<div class="image" style="margin-left:40%;"><img src="img/arrow.png" width="100px" height="100px"></div>
+	 		<div class="image" style="margin-left:50%;"><img src="img/arrow.png" width="100px" height="100px"></div>
+	 	</div>
+
+	 	<div class="arrowstwo">
+	 		<div class="image" style="margin-left:50%;"><img src="img/arrow.png" width="100px" height="100px"></div>
+	 		<div class="image" style="margin-left:60%;"><img src="img/arrow.png" width="100px" height="100px"></div>
+	 		<div class="image" style="margin-left:70%;"><img src="img/arrow.png" width="100px" height="100px"></div>
+	 		<div class="image" style="margin-left:80%;"><img src="img/arrow.png" width="100px" height="100px"></div>
+	 	</div>
+ 	 </div>
+
+</body>
+
+ <script>
+      
+  $(document).ready( function() {
+      $( '.hoverzone' ).hover(function () {
+       		$( '.information' ).toggleClass( 'texthover' );
+       		$( '.cascades' ).toggleClass( 'texthover' );
+       		$( '.arrows' ).toggleClass( 'arrowshover' );
+       		$( '.arrowstwo' ).toggleClass( 'arrowshover' );
+       		$( '.wiki' ).toggleClass( "visible");
+		});
+  });
+
+</script>
+
+</html>

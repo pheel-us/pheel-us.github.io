@@ -1,0 +1,30 @@
+html{
+	width:100%;
+}
+
+body{
+	background-color: white;
+	width:100%;
+	text-align:center;
+}
+
+h1{
+	color:blue;
+	font-family:Arial;
+	font-size:48px;
+	font-weight:bold;
+}
+
+.letter{
+
+
+}
+
+.letter h1{
+	color:white;
+	margin:auto;
+	position:absolute;
+	top:0;left:0;bottom:0;right:0;
+	width:100px;
+	height:50%;
+}

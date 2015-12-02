@@ -1,0 +1,87 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 5.00//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+
+<head>
+
+    <title>Language - Wikipedia, the free Encyclopedia</title>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+
+    <style>
+
+    body {
+      width: 100%;
+      height: 100%;
+      background: white;
+      overflow: hidden;
+      margin:0;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+
+
+
+    .wiki {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      opacity:1;
+      -webkit-transition: all 1s;
+     }
+
+     .wordmap {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+        bottom: -85%;
+      overflow: scroll;
+      z-index: 2;
+      -webkit-transition: all 1s;
+     }
+
+          .clicked {
+            bottom: 0%;
+            -webkit-transition: all 1s;
+          }
+
+          .faded {
+            opacity:0.3;
+            -webkit-transition: all 1s;
+          }
+
+    </style>
+
+</head>
+
+<body>
+	<div class="wiki" style="height: 100%;"><iframe src="http://en.wikipedia.org/wiki/Language" seamless frameborder="0"></iframe>
+  </div>
+
+  <div class="wordmap">
+    <img src="wordmap.png" width="2934px"></img>
+  </div>
+
+</body>
+
+ <script>
+      
+  $(document).ready( function() {
+      $( '.wordmap' ).click(function () {
+          $('.wordmap').toggleClass('clicked');
+          $('.wiki').toggleClass('faded');
+          $('.wiki').scrollTo('wiki'); 
+    });
+  });
+
+
+</script>
+
+</html>

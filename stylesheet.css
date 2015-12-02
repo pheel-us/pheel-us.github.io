@@ -1,0 +1,16 @@
+.tryna{
+	color: black;
+	font-size: 200px;
+	font-family: 'Apercu', Helvetica, 'Sans Serif';
+	text-align: center;
+	margin-top: 15%;
+}
+.tryna a{
+	text-decoration: underline;
+	color:black;
+	
+}
+
+.tryna a:hover{
+	color: red;
+	}
