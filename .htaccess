@@ -1,8 +1,0 @@
-AddType text/html .html
-AddHandler default-handler .html
-AddOutputFilter INCLUDES .html
-
-
-<FilesMatch ".(eot|ttf|otf|woff)">
-	Header set Access-Control-Allow-Origin "*"
-</FilesMatch>
