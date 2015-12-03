@@ -1,24 +1,89 @@
 <html>
+<!--
+  Hello intrepid traveller of the cyberspaces, the council suggests that you
+  follow this link to discover the truth behind the curtain:
+    https://github.com/pheel-us/pheel-us.github.io
+-->
 <head>
-	<title>hello world</title>
-	<style>
+  <title>hello world</title>
 
-	@font-face {
-		font-family:"Career";
-		src:url("Career.ttf");
-	}
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.1.6/zepto.min.js"></script>
 
-	body {
-		font-family: "Career";
-		padding: 35vh;
-		font-size: 70px;
-		text-align: center;
-	}
+  <script type="text/javascript">
+  $(function () {
 
+    // https://github.com/coolaj86/knuth-shuffle/blob/master/index.js
+    function shuffle(array) {
+      var currentIndex = array.length,
+          temporaryValue,
+          randomIndex
 
-	</style>
+      // While there remain elements to shuffle...
+      while (0 !== currentIndex) {
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex)
+        currentIndex -= 1
+
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex]
+        array[currentIndex] = array[randomIndex]
+        array[randomIndex] = temporaryValue
+      }
+
+      return array
+    }
+
+    // Fetch and randomize the list of directories, then render them into the
+    // DOM after the first H1
+    $.ajax({
+      url: '/index.json',
+      dataType: 'json',
+      success: function (data) {
+        var heading     = $('h1').eq(0),
+            directories = data
+
+        var list = shuffle(directories)
+          .map(function (d) { return '<a href="/'+d+'/">'+d+'</a>' })
+          .map(function (d) { return '<li>'+d+'</li>' })
+          .join("\n")
+
+        heading.after('<ul>'+list+'</ul>')
+      }
+    })
+  });
+  </script>
+
+  <style>
+  @font-face {
+    font-family: "Career";
+    src: url("Career.ttf");
+  }
+
+  h1 {
+    padding: 35vh 0 0;
+    font-family: "Career";
+    font-size: 70px;
+    text-align: center;
+  }
+
+  ul {
+    padding: 5rem;
+    font-family: 'Apercu', Helvetica, sans-serif;
+    font-size: 0.875rem;
+    letter-spacing: 0.05rem;
+    text-align: center;
+  }
+  li {
+    margin: 1.25rem 0 0;
+    list-style: none;
+  }
+  a {
+    color: blue;
+    text-decoration: none;
+  }
+  </style>
 </head>
 <body>
-hello world
+  <h1>hello world</h1>
 </body>
 </html>
