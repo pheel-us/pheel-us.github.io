@@ -1,33 +1,34 @@
-.person {
-  position: absolute;
-  width: 4px;
-  height: 4px;
+* {
+  margin: 0;
+  padding: 0;
 }
-.person span {
-  display: block;
-  width: 0;
-  height: 0;
 
-  border: 2px solid #000;
-  border-radius: 2px;
+.person .person-detail {
+  fill: #000;
 }
-.person.birthing {
-  animation-duration: 0.5s;
+
+.person.birthing .person-detail {
+  animation-duration: 0.75s;
   animation-name: person-birthing;
 }
-.person.dying {
-  opacity: 0;
-  animation-duration: 0.5s;
+.person.dying .person-detail {
+  opacity: 0; /* Ensure it's 0 after the animation */
+  animation-duration: 1s;
   animation-name: person-dying;
 }
 
 @keyframes person-birthing {
-  0%   { transform: scale(1, 1); opacity: 0; }
-  50%  { transform: scale(2, 2); }
-  100% { transform: scale(1, 1); opacity: 1; }
+  0%   { transform: scale(1, 1); opacity: 0; fill: #0f0; }
+  50%  { transform: scale(3, 3); opacity: 1; fill: #0f0; }
+  100% { transform: scale(1, 1); opacity: 1; fill: #000; }
 }
 
 @keyframes person-dying {
-  0%   { transform: scale(1, 1); opacity: 1; }
-  100% { transform: scale(0, 0); opacity: 0; }
+  0%   { transform: scale(1, 1);     opacity: 1; }
+  50%  { transform: scale(2.5, 2.5); opacity: 1; fill: #f00; }
+  100% { transform: scale(0, 0);     opacity: 0; }
+}
+
+.continents {
+  display: none;
 }

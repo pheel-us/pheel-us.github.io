@@ -23,26 +23,30 @@ $(function() {
 
   var secondsInAYear = 365.25 * 24 * 3600;
 
-  var population      =  7349472099,
+  var population      = 7349472099,
       birthsPerYear   = birthRate * population,
       deathsPerYear   = deathRate * population,
       birthsPerSecond = birthsPerYear / secondsInAYear,
       deathsPerSecond = deathsPerYear / secondsInAYear;
+
+  var tickRate = 1000
+  // Adjust the per-second rate based on how often we're actually ticking
+  birthsPerSecond *= (1000 / tickRate)
+  deathsPerSecond *= (1000 / tickRate)
 
   console.log('birthsPerSecond:', birthsPerSecond)
   console.log('deathsPerSecond:', deathsPerSecond)
 
   var $map             = $('.map'),
       mapWidth         = 0,
-      mapHeight        = 0;
+      mapHeight        = 0,
+      mapPadding       = 10;
 
   var $continents      = $('.continents'),
       continentsCtx    = $continents[0].getContext('2d'),
       continentsWidth  = $continents.width(),
       continentsHeight = $continents.height(),
       scaleFactor      = 4.0;
-
-  var $people = [];
 
 
   function loadContinentsImage() {
@@ -60,19 +64,17 @@ $(function() {
     mapWidth  = continentsWidth * scaleFactor
     mapHeight = continentsHeight * scaleFactor
 
-    $map.width(mapWidth)
-    $map.height(mapHeight)
+    $map.width(mapWidth   + (mapPadding * 2))
+    $map.height(mapHeight + (mapPadding * 2))
     // $map.attr('width',  mapWidth)
     // $map.attr('height', mapHeight)
   }
 
-
   var simulationInterval;
 
   function startSimulation() {
-    // Render one-ten-millionth of the population
-    var portion = population / 10000000,
-        births  = [];
+    // Render a 2.5-millionth of the population
+    var portion = population / 2500000;
 
     for (var i = 0; i < portion; i++) {
       births.push(createBirth(false))
