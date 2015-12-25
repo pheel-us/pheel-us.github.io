@@ -77,11 +77,10 @@ $(function() {
     var portion = population / 2500000;
 
     for (var i = 0; i < portion; i++) {
-      births.push(createBirth(false))
+      performBirth(false)
     }
-    $map.append(births.join("\n"))
 
-    simulationInterval = window.setInterval(tickSimulation, 1000)
+    simulationInterval = window.setInterval(tickSimulation, tickRate)
   }
 
   // NOTE: Since the births/deaths per second aren't whole integers, we
@@ -120,16 +119,12 @@ $(function() {
   }
 
   function performBirths(birthsCount) {
-    var births = []
-
     for (var i = 0; i < birthsCount; i++) {
-      births.push(createBirth(true))
+      performBirth(true)
     }
-
-    $map.append(births.join("\n"))
   }
 
-  function createBirth(animate) {
+  function performBirth(animate) {
     var xRand = Math.random(),
         yRand = Math.random();
 
@@ -138,22 +133,39 @@ $(function() {
       yRand = Math.random()
     }
 
-    var x     = (mapWidth * xRand)  - 2,
-        y     = (mapHeight * yRand) - 2,
-        klass = (animate ? ' birthing' : ''),
-        style = 'left: '+x+'px; top: '+y+'px;';
+    var x              = (mapWidth * xRand)  - 1 + mapPadding,
+        y              = (mapHeight * yRand) - 1 + mapPadding,
+        klass          = 'person',
+        translate      = 'translate('+x+', '+y+')',
+        finalTransform = translate+' scale(1, 1)'
 
-    return '<div class="person'+klass+'" style="'+style+'"><span></span></div>'
+    var arc = d3.svg.arc()
+      .innerRadius(0)
+      .outerRadius(2)
+      .startAngle(0)
+      .endAngle(360 * (Math.PI/180))
+
+    var group = d3.select('.map-people')
+      .append('g')
+      .attr('class', 'person'+(animate ? ' birthing' : ''))
+      .attr('transform', finalTransform)
+      // .attr('filter', 'url(#filter-shadow)')
+
+    var path = group
+      .append('path')
+      .attr('class', 'person-detail')
+      .attr('d', arc)
+
+    setTimeout(function() { group.attr('class', 'person') }, 2000)
   }
 
   function performDeaths(deathsCount) {
     function performDeath() {
-      var $people = $('.person:not(.young):not(.dying)'),
+      var $people = $('.person:not(.birthing):not(.dying)'),
           $person = $($people[Math.floor(Math.random() * $people.length)])
 
-      $person.addClass('dying')
-
-      setTimeout(function() { $person.remove() }, 500)
+      $person.attr('class', 'person dying')
+      setTimeout(function() { $person.remove() }, 2000)
     }
 
     for (var i = 0; i < deathsCount; i++) { performDeath() }
