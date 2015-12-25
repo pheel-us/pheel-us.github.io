@@ -40,10 +40,10 @@ $(function() {
   var $map             = $('.map'),
       mapWidth         = 0,
       mapHeight        = 0,
-      mapPadding       = 10;
+      mapXPadding      = 40,
+      mapYPadding      = 80;
 
   var $continents      = $('.continents'),
-      continentsCtx    = $continents[0].getContext('2d'),
       continentsWidth  = $continents.width(),
       continentsHeight = $continents.height(),
       scaleFactor      = 4.0;
@@ -52,7 +52,16 @@ $(function() {
   function loadContinentsImage() {
     var continentsImage = new Image()
     continentsImage.onload = function() {
+      var continentsCtx = $continents[0].getContext('2d')
+
       continentsCtx.drawImage(continentsImage, 0, 0);
+
+      // Hide the map, then show it once the simulation has started up
+      $map.css({opacity: 0})
+      setTimeout(function() {
+        updateForWindowSize()
+        $map.css({opacity: 1})
+      }, 100)
 
       updateMapSizing()
       startSimulation()
@@ -64,8 +73,10 @@ $(function() {
     mapWidth  = continentsWidth * scaleFactor
     mapHeight = continentsHeight * scaleFactor
 
-    $map.width(mapWidth   + (mapPadding * 2))
-    $map.height(mapHeight + (mapPadding * 2))
+    // $map.attr('viewBox', '0 0 '+mapWidth+' '+mapHeight)
+
+    // $map.width(mapWidth   + (mapPadding * 2))
+    // $map.height(mapHeight + (mapPadding * 2))
     // $map.attr('width',  mapWidth)
     // $map.attr('height', mapHeight)
   }
@@ -107,7 +118,8 @@ $(function() {
     var x = Math.round(continentsWidth * xRand),
         y = Math.round(continentsHeight * yRand);
 
-    var pixelImageData = continentsCtx.getImageData(x, y, 1, 1)
+    var continentsCtx  = $continents[0].getContext('2d'),
+        pixelImageData = continentsCtx.getImageData(x, y, 1, 1)
 
     // var r = pixelImageData.data[0],
     //     g = pixelImageData.data[1],
@@ -133,8 +145,8 @@ $(function() {
       yRand = Math.random()
     }
 
-    var x              = (mapWidth * xRand)  - 1 + mapPadding,
-        y              = (mapHeight * yRand) - 1 + mapPadding,
+    var x              = (mapWidth * xRand)  - 1 + mapXPadding,
+        y              = (mapHeight * yRand) - 1 + mapYPadding,
         klass          = 'person',
         translate      = 'translate('+x+', '+y+')',
         finalTransform = translate+' scale(1, 1)'
@@ -183,6 +195,46 @@ $(function() {
     ]
   }
 
+  $(window).on('resize', updateForWindowSize);
 
+  function updateForWindowSize() {
+    var windowWidth  = $(window).width(),
+        windowHeight = $(window).height()
+
+    var minWidth  = mapWidth  + (mapXPadding * 2),
+        minHeight = mapHeight + (mapYPadding * 2);
+
+    var scale = Math.min(windowWidth / minWidth, windowHeight / minHeight, 1)
+    // Convert to transform argument
+
+    var bbox         = $('.map-people')[0].getBBox()
+        actualHeight = (bbox.height + (mapYPadding * 2)) * scale,
+        actualWidth  = (bbox.width  + (mapXPadding * 2)) * scale,
+        topOffset    = (windowHeight - actualHeight) / 2,
+        leftOffset   = (windowWidth  - actualWidth)  / 2;
+
+    console.log(scale)
+
+    $('.map-wrap').css({paddingTop: topOffset, paddingLeft: leftOffset})
+    $('.map-people').attr('transform', 'scale('+scale+', '+scale+')');
+  }
+
+  function toggleWhatModal() {
+    $('.wrap, .what-modal').toggleClass('what-modal-active')
+  }
+
+  $('.what-show').on('click', function(event) {
+    event.preventDefault()
+    toggleWhatModal()
+  })
+
+  $('.what-modal').on('click', function(event) {
+    // Dismiss it if they clicked outside the centering box
+    if(event.target == $('.what-modal')[0]) {
+      toggleWhatModal()
+    }
+  })
+
+  // Start it up!
   loadContinentsImage()
 });
