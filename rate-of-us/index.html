@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The Rate of Us</title>
+
+  <link rel="stylesheet" type="text/css" href="./style.css" media="screen" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.12/d3.min.js"></script>
+  <script src="./script.js"></script>
+</head>
+<body>
+
+  <div class="wrap">
+
+    <h1><span>The Rate of Us</span></h1>
+
+    <div class="map-wrap">
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="map">
+        <!-- <defs>
+          <filter id="filter-shadow" x="-20" y="-20" width="40" height="40">
+            <feOffset result="offOut" in="SourceAlpha" dx="0" dy="0" />
+            <feGaussianBlur result="blurOut" in="SourceAlpha" stdDeviation="10" />
+            <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+          </filter>
+        </defs> -->
+
+        <g class="map-people" fill="none"></g>
+      </svg>
+    </div>
+
+    <div class="what">
+      <a class="what-show" href="#what">What is this?</a>
+    </div>
+
+  </div>
+
+  <div class="what-modal">
+    <div class="what-center">
+      <h2>So, what is this?</h2>
+      <p>
+        According to the United Nations there are approximately
+        <a href="http://esa.un.org/unpd/wpp/DVD/Files/1_Indicators%20(Standard)/EXCEL_FILES/1_Population/WPP2015_POP_F01_1_TOTAL_POPULATION_BOTH_SEXES.XLS">7,349,472,099 people</a>
+        on the planet. The cumulative effort of all those people result in
+        a birth rate of approximately
+        <a href="http://esa.un.org/unpd/wpp/DVD/Files/1_Indicators%20(Standard)/EXCEL_FILES/2_Fertility/WPP2015_FERT_F03_CRUDE_BIRTH_RATE.XLS">19.587 persons per 1,000 people</a>
+        and a death rate of approximately
+        <a href="http://esa.un.org/unpd/wpp/DVD/Files/1_Indicators%20(Standard)/EXCEL_FILES/3_Mortality/WPP2015_MORT_F02_CRUDE_DEATH_RATE.XLS">7.829 persons per 1,000 people</a>.
+      </p>
+      <p>
+        Using some math it's possible to deduce approximately how many people
+        are born and die every second. That's what <em>this</em> is, it's the
+        rate of <em>us</em>.
+      </p>
+      <p>(A project by <a href="https://dirk.to">Dirk Gadsden</a>.)</p>
+    </div>
+  </div>
+
+  <canvas width="375" height="198" class="continents"></canvas>
+
+</body>
+</html>
