@@ -1,0 +1,159 @@
+<html>
+    <head>
+        <title>Browser Test Page</title>
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script>
+
+            $(document).ready(function(){
+                /*var day = getUTCDay();
+                var year = getUTCFullYear();
+                var month = getUTCMonth();
+                var hour = getUTCHours();
+                var minute = getUTCMinutes();
+                var second = getUTCSeconds(); */
+                var now = new Date;
+                $("#date").html(""+now+"<br />jquery");
+
+            });
+
+        </script>
+        <style>
+            body{
+                background-color: white;
+                width: 100%;
+                height: 100%;
+            }
+
+            #container{
+                width: 80%;
+                margin-top: 2%;
+                margin-left: 10%;
+                margin-right: 10%;
+                background-color: white;
+            }
+
+            .colorblock{
+                width: 33%;
+                height: 5%;
+                display: inline-block;
+            }
+            .grad{
+                width: 33%;
+                height: 5%;
+                display: inline-block;
+                /* Safari 5.1+, Mobile Safari, Chrome 10+ */
+                background-image: -webkit-linear-gradient(left, black, white);
+
+                /* Firefox 3.6+ */
+                background-image: -moz-linear-gradient(left, black, white);
+
+                /* Opera 11.10+ */
+                background-image: -o-linear-gradient(left, black, white);
+            }
+            .opac{
+                height: 5%;
+                display: inline-block;
+                width: 11%;
+            }
+
+            #colorlist{
+                position: fixed;
+                top: 2%;
+                left: 2%;
+            }
+            #colorlist .block{
+                width: 20px;
+                height: 20px;
+                display: block;
+            }
+
+            #text-test{
+                margin-top: 3%;
+                margin-bottom: 3%;
+                line-height: 30px;
+                font-size: 20px;
+            }
+
+            #absolute{
+                position: absolute;
+                top: 100px;
+                left: 900px;
+                background-color: black;
+                color: white;
+                padding: 20px;
+                text-align: center;
+                width: 200px;
+                box-shadow: 10px 10px 20px #222;
+            }
+
+            .radius{
+                display: inline-block;
+                width: 20%;
+                margin-right: 2%;
+                background-color: black;
+                height: 20%;
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <div id="colorlist">
+            <div class="block" style="background-color: black"></div>
+            <div class="block" style="background-color: blue"></div>
+            <div class="block" style="background-color: cyan"></div>
+            <div class="block" style="background-color: gray"></div>
+            <div class="block" style="background-color: green"></div>
+            <div class="block" style="background-color: lime"></div>
+            <div class="block" style="background-color: magenta"></div>
+            <div class="block" style="background-color: maroon"></div>
+            <div class="block" style="background-color: navy"></div>
+            <div class="block" style="background-color: olive"></div>
+            <div class="block" style="background-color: orange"></div>
+            <div class="block" style="background-color: purple"></div>
+            <div class="block" style="background-color: red"></div>
+            <div class="block" style="background-color: silver"></div>
+            <div class="block" style="background-color: teal"></div>
+            <div class="block" style="background-color: white"></div>
+            <div class="block" style="background-color: yellow"></div>
+
+        </div>
+
+        <div id="container">
+            <span id="date"></span><br /><br />
+
+            <div class="colorblock" style="background-color: rgb(255,0,0);"></div> <div class="colorblock" style="background-color: red;"></div><span style="color: rgb(255,0,0);">&nbsp;R</span><br />
+            <div class="colorblock" style="background-color: rgb(0,255,0);"></div> <div class="colorblock" style="background-color: green;"></div><span style="color: rgb(0,255,0);">&nbsp;G</span><br />
+            <div class="colorblock" style="background-color: rgb(0,0,255);"></div> <div class="colorblock" style="background-color: blue;"></div><span style="color: rgb(0,0,255);">&nbsp;B</span>
+            <div class="grad"></div> <div class="opac" style="opacity: 1; background-color: black;"></div><div class="opac" style="opacity: 0.5; background-color: black;"></div><div class="opac" style="opacity: 0.25; background-color: black;"></div><!--<div class="opac" style="background-color: rgba(0,0,0,0.25)"></div>--><span>&nbsp;A</span><br />
+
+            <div id="text-test">
+                <span style="font-family: serif;">This is the default serif font.</span><br />
+                <span style="font-family: sans-serif;">This is the default sans-serif font.</span><br />
+                <span style="font-family: cursive;">This is the default cursive font.</span><br />
+                <span style="font-family: monospace;">This is the default monospace font.</span><br />
+                <span style="font-family: fantasy;">This is the default fantasy font.</span><br />
+                <span style="font-family: symbol;">This is the default symbol font.</span><br />
+                <br />
+                <span style="font-style: normal">normal</span> <span style="font-style: italic">italic</span> <span style="font-style: oblique">oblique</span><br />
+                <em>emphasis</em> <strong>strong</strong><br />
+                <sup>sup</sup> <sub>sub</sub><br />
+                <span style="font-variants: normal">normal</span> <span style="font-variants: small-caps">small-caps</span><br />
+                <span style="font-weight: lighter">lighter</span> <span style="font-weight: normal">normal</span> <span style="font-weight: bold">bold</span> <span style="font-weight: bolder">bolder</span><br />
+                <span style="letter-spacing: 0.1em">letter spacing 0.1em</span> <br /><span style="letter-spacing: 1em">letter spacing 1em</span><br />
+                <span style="text-shadow: 5px 5px 5px #222">text-shadow</span>
+                <marquee>marquee</marquee> <blink>blink</blink>
+            </div>
+
+            <div id="absolute">
+                This box is absolutely positioned in pixels.
+            </div>
+
+
+
+            <div class="radius" style="border-radius: 20%; -webkit-border-radius: 20%;"></div><div class="radius" style="border-radius: 10%;"></div><div class="radius" style="border-radius: 0%;"></div>
+            <br /><br />
+
+        </div>
+    </body>
+</html>

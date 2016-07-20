@@ -1,0 +1,150 @@
+<html>
+    <head>
+        <title>Text Pattern</title>
+        <link href='http://fonts.googleapis.com/css?family=Vollkorn:700italic,400' rel='stylesheet' type='text/css'>
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script>
+            $(document).ready(function(){
+
+                $(document).scroll(function(){
+
+                    var scrollTop = $(document).scrollTop();
+                    var deg = scrollTop*0.01;
+
+                    $("#xone").css("-webkit-transform", "rotate(" + Math.floor(deg*0.5) + "deg)" );
+                    $("#xtwo").css("-webkit-transform", "rotate(" + Math.floor(deg) + "deg)" );
+                    $("#xthree").css("-webkit-transform", "rotate(" + Math.floor(deg*2) + "deg)" );
+
+                    if(scrollTop > 500){
+                        $("#one").css("top",100+Math.floor(50*Math.sin(((scrollTop-500)*0.005)))+"px");
+                        $("#one").css("left",210+Math.floor(50*Math.cos(((scrollTop-500)*0.005)))+"px");
+                    }
+                    if(scrollTop > 1000){
+                        $("#two").css("top",150+Math.floor(50*Math.sin(((scrollTop-1000)*0.005)))+"px");
+                        $("#two").css("left",240+Math.floor(50*Math.cos(((scrollTop-1000)*0.005)))+"px");
+                    }
+                    if(scrollTop > 1500){
+                        $("#three").css("top",200+Math.floor(50*Math.sin(((scrollTop-1500)*0.005)))+"px");
+                        $("#three").css("left",270+Math.floor(50*Math.cos(((scrollTop-1500)*0.005)))+"px");
+                    }
+                    if(scrollTop > 2000){
+                        $("#four").css("top",250+Math.floor(50*Math.sin(((scrollTop-2000)*0.005)))+"px");
+                        $("#four").css("left",300+Math.floor(50*Math.cos(((scrollTop-2000)*0.005)))+"px");
+                    }
+                });
+            });
+        </script>
+        <style>
+            *{
+                border: 0;
+                margin: 0;
+            }
+
+            body{
+                scroll-x: hidden;
+                overflow-x: hidden;
+                background-color: $dddddd;
+                height: 5000px;
+                font-family: 'Vollkorn',serif;
+                font-weight: 700;
+                font-style: italic;
+                font-size: 50px;
+                letter-spacing: 10px;
+
+            }
+
+            #one{
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                top: 100px;
+                left: 210px;
+                color: black;
+                -webkit-transform: rotate(30deg);
+            }
+
+            #two{
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                top: 150px;
+                left: 240px;
+                color: #00acec;
+                -webkit-transform: rotate(30deg);
+            }
+
+            #three{
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                top: 200px;
+                left: 270px;
+                color: #ca0088;
+                -webkit-transform: rotate(30deg);
+            }
+
+            #four{
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                top: 250px;;
+                left: 300px;
+                color: #fff22d;
+                -webkit-transform: rotate(30deg);
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <div id="one">
+            <span>GOOD MORNING</span><br />
+            <span>GOOD MORNING</span><br />
+            <span>GOOD MORNING</span><br />
+            <span>GOOD MORNING</span><br />
+            <span>GOOD MORNING</span><br />
+            <span>GOOD MORNING</span><br />
+            <span>GOOD MORNING</span><br />
+            <span>GOOD MORNING</span><br />
+            <span>GOOD MORNING</span><br />
+            <span>GOOD MORNING</span><br />
+
+        </div>
+        <div id="two">
+            <span>NEW YORK</span><br />
+            <span>NEW YORK</span><br />
+            <span>NEW YORK</span><br />
+            <span>NEW YORK</span><br />
+            <span>NEW YORK</span><br />
+            <span>NEW YORK</span><br />
+            <span>NEW YORK</span><br />
+            <span>NEW YORK</span><br />
+            <span>NEW YORK</span><br />
+            <span>NEW YORK</span><br />
+        </div>
+        <div id="three">
+            <span>LET'S GET</span><br />
+            <span>LET'S GET</span><br />
+            <span>LET'S GET</span><br />
+            <span>LET'S GET</span><br />
+            <span>LET'S GET</span><br />
+            <span>LET'S GET</span><br />
+            <span>LET'S GET</span><br />
+            <span>LET'S GET</span><br />
+            <span>LET'S GET</span><br />
+            <span>LET'S GET</span><br />
+        </div>
+        <div id="four">
+            <span>THIS MONEY</span><br />
+            <span>THIS MONEY</span><br />
+            <span>THIS MONEY</span><br />
+            <span>THIS MONEY</span><br />
+            <span>THIS MONEY</span><br />
+            <span>THIS MONEY</span><br />
+            <span>THIS MONEY</span><br />
+            <span>THIS MONEY</span><br />
+            <span>THIS MONEY</span><br />
+            <span>THIS MONEY</span><br />
+        </div
+    </body>
+</html>
